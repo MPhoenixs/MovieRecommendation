@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import requests
 import os
-import gdown
 
 # Download similarity.pkl from Google Drive
 file_id = "1wUDruHgeI6TYWXdgFdwMQ5AwxzSTrpoO"
