@@ -1,6 +1,17 @@
 import streamlit as st
 import pickle
 import requests
+import os
+import requests
+def download_file(url, filename):
+    if not os.path.exists(filename):
+        print("Downloading model file...")
+        r = requests.get(url)
+        with open(filename, 'wb') as f:
+            f.write(r.content)
+
+# Google Drive Direct Download Link (example)
+download_file("https://drive.google.com/uc?export=download&id=1wUDruHgeI6TYWXdgFdwMQ5AwxzSTrpoO", "similarity.pkl")
 def fetch_poster(movie_id):
     response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=af2c3525fb6d4799d8ae9cb1160d8590')
     data = response.json()
